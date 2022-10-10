@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xx-12">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">TITLE</th>
+                    <th scope="col">STATUS</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor = "let i of todoData">
+                    <td>{{i.id}}</td>
+                    <td>{{i.title}}</td>
+                    <td *ngIf = "i.completed">
+                        <div class="alert alert-success" role="alert">
+                          Completed
+                        </div>
+                    </td>
+                    <td *ngIf = "!i.completed">
+                        <div class="alert alert-danger" role="alert">
+                            Not Completed
+                        </div>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
